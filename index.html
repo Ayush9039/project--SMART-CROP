@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCrop - Smart Technology for Smart Farming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i> SmartCrop</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item active">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="fertilizers.html" class="nav-item">
+                <i class="fas fa-flask"></i> Fertilizers
+            </a>
+            <a href="image-detection.html" class="nav-item">
+                <i class="fas fa-image"></i> Image Detection
+            </a>
+            <a href="learning.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="ai-assistant.html" class="nav-item">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="faqs.html" class="nav-item">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button onclick="toggleLanguage()" id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Site Header Title -->
+        <header class="site-header" aria-label="Site Title">
+            <h1 class="site-title"><i class="fas fa-seedling"></i> SmartCrop</h1>
+            <p class="site-subtitle"> || Smarter Farming, Better Yields ||</p>
+        </header>
+        
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Smart Technology for Smart Farming</h1>
+                    <p>Revolutionizing agriculture with cutting-edge IoT sensors, AI-powered insights, and data-driven solutions to maximize crop yield and minimize resource consumption.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-secondary" onclick="location.href='#about'">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <video src="videoplayback.mp4" autoplay muted loop playsinline aria-label="Smart Farming Technology" style="width:100%;border-radius:1rem;box-shadow:0 20px 40px rgba(0,0,0,0.1);"></video>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Image Detection (Hero-like layout) -->
+        <section class="image-detection-promo image-detect" style="padding:3rem 2rem;background:white;margin-bottom:3rem;border:2px solid #10b981;border-radius:1rem;">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 style="color:#065f46;margin-bottom:1rem;"><i class="fas fa-image"></i> Image Detection</h2>
+                    <p class="promo-subtitle" style="margin-bottom:1rem;color:#6b7280;">Upload a plant leaf image to detect diseases and get instant treatment recommendations.</p>
+                    <p style="margin-bottom:1.5rem;">“With image detection, users can easily find out if their crops have diseases or pests just by taking a picture. This smart technology helps them protect crops on time and increase their harvest.”</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="location.href='image-detection.html'">Get Started</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img class="rotating-image" alt="Image Detection showcase"
+                         data-images="Gemini_Generated_Image_f7zgqrf7zgqrf7zg.png,Gemini_Generated_Image_tr2i4otr2i4otr2i.png,Gemini_Generated_Image_p89qhvp89qhvp89q.png"
+                         style="width:100%;border-radius:1rem;box-shadow:0 20px 40px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </section>
+        
+        <!-- New Approaches Section -->
+        <section class="approaches" id="about">
+            <h2>New Approaches for Farming Technology</h2>
+            <p class="section-description">Discover innovative solutions that are transforming modern agriculture through technology integration and data-driven decision making.</p>
+            
+            <div class="approach-cards">
+                <div class="card">
+                    <div class="card-text">
+                        <div class="card-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <h3>IoT Sensors</h3>
+                        <p>Real-time monitoring of soil moisture, temperature, and crop health using advanced sensor networks.</p>
+                    </div>
+                    <img class="card-side-image" src="Gemini_Generated_Image_fwzw2nfwzw2nfwzw.png" alt="IoT Sensors for Smart Farming">
+                </div>
+                <div class="card">
+                    <div class="card-text">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Analytics</h3>
+                        <p>Machine learning algorithms predict crop yields, detect diseases, and optimize farming practices.</p>
+                    </div>
+                    <img class="card-side-image" src="Gemini_Generated_Image_h6ji0hh6ji0hh6ji.png" alt="Smart farming">
+                </div>
+                <div class="card">
+                    <div class="card-text">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Integration</h3>
+                        <p>Farmer-friendly mobile apps for remote monitoring and control of farming operations.</p>
+                    </div>
+                    <img class="card-side-image" src="Gemini_Generated_Image_nn051onn051onn05 (1).png" alt="Smart farming">
+                </div>
+                <div class="card">
+                    <div class="card-text">
+                        <div class="card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Sustainable Practices</h3>
+                        <p>Eco-friendly solutions that reduce water usage, minimize chemical inputs, and protect soil health.</p>
+                    </div>
+                    <img class="card-side-image" src="Gemini_Generated_Image_ox46l2ox46l2ox46.png" alt="Smart farming">
+                </div>
+                <div class="card">
+                    <div class="card-text">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h3>Climate-smart Agriculture (CSA)</h3>
+                        <p>Data-based weather forecasting and crop planning. Using low-emission fertilizers and renewable energy to reduce carbon footprint.</p>
+                        
+                    </div>
+                    <img class="card-side-image" src="Gemini_Generated_Image_qj0fkrqj0fkrqj0f.png" alt="Smart farming">
+                </div>
+                <div class="card">
+                    <div class="card-text">
+                        <div class="card-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Smart Irrigation Systems</h3>
+                        <p>AI and IoT based drip irrigation that automatically controls water supply based on weather and soil conditions.</p>
+                        
+                    </div>
+                    <img class="card-side-image" src="Gemini_Generated_Image_1iokzc1iokzc1iok.png" alt="Smart farming">
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-seedling"></i> SmartCrop</h3>
+                    <p>SmartCrop is a comprehensive platform dedicated to revolutionizing agriculture through smart technology. We provide farmers with cutting-edge tools, real-time data, and AI-powered insights to maximize productivity while promoting sustainable farming practices.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="market.html">Market Prices</a></li>
+                        <li><a href="learning.html">Learning Hub</a></li>
+                        <li><a href="sensors.html">Sensor Solutions</a></li>
+                        <li><a href="weather.html">Weather Forecast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="mailto:info@smartcrop.com"><i class="fas fa-envelope"></i> info@smartcrop.com</a>
+                        <a href="#"><i class="fab fa-instagram"></i> SmartCrop.official</a>
+                        <a href="#"><i class="fab fa-facebook"></i> SmartCrop</a>
+                        <a href="#"><i class="fab fa-twitter"></i> @SmartCropTech</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SmartCrop. All rights reserved. | Empowering Farmers with Smart Technology</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/image-rotation.js"></script>
