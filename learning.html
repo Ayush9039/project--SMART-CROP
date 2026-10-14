@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning - SmartCrop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i> SmartCrop</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="fertilizers.html" class="nav-item">
+                <i class="fas fa-flask"></i> Fertilizers
+            </a>
+            <a href="learning.html" class="nav-item active">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="ai-assistant.html" class="nav-item">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="faqs.html" class="nav-item">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button onclick="toggleLanguage()" id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-graduation-cap"></i> Learning Hub</h1>
+            <p>Master modern farming techniques and technology-driven agriculture</p>
+        </div>
+
+        <!-- Knowledge Hub Section -->
+        <section class="learning-section">
+            <h2><i class="fas fa-book"></i> Knowledge Hub</h2>
+            <div class="knowledge-grid">
+                <div class="knowledge-card">
+                    <img src="https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Precision Agriculture">
+                    <div class="card-content">
+                        <h3>Precision Agriculture Basics</h3>
+                        <p>Learn the fundamentals of precision farming using GPS, sensors, and data analytics.</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-clock"></i> 45 min read</span>
+                            <span><i class="fas fa-user"></i> Beginner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="knowledge-card">
+                    <img src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Soil Management">
+                    <div class="card-content">
+                        <h3>Advanced Soil Management</h3>
+                        <p>Comprehensive guide to soil testing, nutrient management, and pH optimization.</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-clock"></i> 60 min read</span>
+                            <span><i class="fas fa-user"></i> Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="knowledge-card">
+                    <img src="https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Irrigation Systems">
+                    <div class="card-content">
+                        <h3>Smart Irrigation Systems</h3>
+                        <p>Implementation of drip irrigation, sprinkler systems, and automated watering.</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-clock"></i> 30 min read</span>
+                            <span><i class="fas fa-user"></i> Beginner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices Section -->
+        <section class="learning-section">
+            <h2><i class="fas fa-star"></i> Best Practices by Crop</h2>
+            <div class="crop-practices">
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <i class="fas fa-wheat-awn"></i>
+                        <h3>Wheat Cultivation</h3>
+                    </div>
+                    <div class="practice-content">
+                        <ul>
+                            <li>Optimal sowing time: November to December</li>
+                            <li>Seed rate: 100-120 kg per hectare</li>
+                            <li>Irrigation: 4-5 times during growth cycle</li>
+                            <li>Fertilizer: NPK ratio 120:60:40 kg/ha</li>
+                            <li>Harvest: When moisture content is 12-14%</li>
+                        </ul>
+                        <button class="btn btn-outline">View Detailed Guide</button>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Rice Production</h3>
+                    </div>
+                    <div class="practice-content">
+                        <ul>
+                            <li>Nursery preparation: 15-20 days before transplanting</li>
+                            <li>Transplanting: 20-25 days old seedlings</li>
+                            <li>Water management: Maintain 5cm water level</li>
+                            <li>Weed control: Pre-emergence herbicides</li>
+                            <li>Harvest: At 80-85% grain maturity</li>
+                        </ul>
+                        <button class="btn btn-outline">View Detailed Guide</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sensor Learning Section -->
+        <section class="learning-section">
+            <h2><i class="fas fa-microchip"></i> Learning by Sensors & Data</h2>
+            <div class="sensor-learning">
+                <div class="learning-card">
+                    <div class="card-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3>Soil Temperature Monitoring</h3>
+                    <p>Understand how soil temperature affects seed germination and root development. Learn to interpret sensor data for optimal planting times.</p>
+                    <div class="learning-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span>75% Complete</span>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Moisture Level Analysis</h3>
+                    <p>Master the art of irrigation scheduling using real-time moisture sensors and predictive analytics for water conservation.</p>
+                    <div class="learning-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%"></div>
+                        </div>
+                        <span>45% Complete</span>
+                    </div>
+                </div>
+                <div class="learning-card">
+                    <div class="card-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Plant Health Detection</h3>
+                    <p>Use AI-powered image recognition and sensor data to identify plant diseases, pest infestations, and nutritional deficiencies early.</p>
+                    <div class="learning-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                        <span>90% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offline Learning Section -->
+        <section class="learning-section">
+            <h2><i class="fas fa-download"></i> Offline Learning Support</h2>
+            <div class="offline-resources">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Comprehensive Farming Guide</h3>
+                    <p>Complete 200-page guide covering all aspects of modern farming techniques and technology integration.</p>
+                    <div class="resource-meta">
+                        <span>PDF • 15.2 MB</span>
+                        <button class="btn btn-small">Download</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Tutorial Series</h3>
+                    <p>20-part video series demonstrating practical farming techniques and equipment operation.</p>
+                    <div class="resource-meta">
+                        <span>MP4 • 2.1 GB</span>
+                        <button class="btn btn-small">Download</button>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Seasonal Crop Calendar</h3>
+                    <p>Interactive calendar showing optimal planting, caring, and harvesting times for different crops.</p>
+                    <div class="resource-meta">
+                        <span>PDF • 5.8 MB</span>
+                        <button class="btn btn-small">Download</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

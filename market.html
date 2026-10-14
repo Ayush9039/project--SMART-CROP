@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market - SmartCrop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i> SmartCrop</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item active">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="learning.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="ai-assistant.html" class="nav-item">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="faqs.html" class="nav-item">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button onclick="toggleLanguage()" id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-chart-line"></i> Market Information</h1>
+            <p>Live crop prices, market trends, and trading recommendations</p>
+        </div>
+
+                <!-- Enhanced Market Price Search Section -->
+                <section class="market-section">
+                    <h2><i class="fas fa-search"></i> Search Market Prices</h2>
+                    <div class="market-search-container">
+                        <div class="search-wrapper">
+                            <div class="search-input-group">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="text" id="marketPriceSearch" placeholder="Search for crop prices (e.g., wheat, rice, cotton)..." class="market-search-input">
+                                <button id="clearMarketBtn" class="clear-btn" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <button id="marketSearchBtn" class="search-btn">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Search</span>
+                            </button>
+                            <button id="favoriteBtn" class="favorite-btn" title="View favorite crops">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="search-filters">
+                            <select id="stateFilter" class="filter-select">
+                                <option value="">All States</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            </select>
+                            <select id="priceSort" class="filter-select">
+                                <option value="">Sort by Price</option>
+                                <option value="high">High to Low</option>
+                                <option value="low">Low to High</option>
+                                <option value="change">Price Change</option>
+                            </select>
+                            <select id="cropTypeFilter" class="filter-select">
+                                <option value="">All Crop Types</option>
+                                <option value="cereal">Cereals</option>
+                                <option value="pulse">Pulses</option>
+                                <option value="oilseed">Oilseeds</option>
+                                <option value="cash">Cash Crops</option>
+                                <option value="vegetable">Vegetables</option>
+                            </select>
+                        </div>
+                        <div class="market-suggestions" id="marketSuggestions"></div>
+                        <div class="popular-crops" id="popularCrops">
+                            <div class="popular-header">
+                                <i class="fas fa-fire"></i>
+                                <span>Popular Crops</span>
+                            </div>
+                            <div class="popular-items" id="popularItems"></div>
+                        </div>
+                    </div>
+                    <div class="search-results" id="marketSearchResults">
+                        <!-- Search results will be displayed here -->
+                    </div>
+                </section>
+        
+        <!-- Price Trends Section -->
+        <section class="market-section">
+            <h2><i class="fas fa-trending-up"></i> Price Trends</h2>
+            <div class="price-cards">
+                <div class="price-card">
+                    <div class="crop-info">
+                        <h3>Wheat</h3>
+                        <div class="state">Madhya Pradesh</div>
+                    </div>
+                    <div class="price-info">
+                        <div class="current-price">₹2,550/quintal</div>
+                        <div class="price-change positive">+5.2%</div>
+                    </div>
+                </div>
+                <div class="price-card">
+                    <div class="crop-info">
+                        <h3>Rice</h3>
+                        <div class="state">Madhya Pradesh</div>
+                    </div>
+                    <div class="price-info">
+                        <div class="current-price">₹3,950/quintal</div>
+                        <div class="price-change negative">-2.1%</div>
+                    </div>
+                </div>
+                <div class="price-card">
+                    <div class="crop-info">
+                        <h3>Cotton</h3>
+                        <div class="state">Madhya Pradesh</div>
+                    </div>
+                    <div class="price-info">
+                        <div class="current-price">₹6,200/quintal</div>
+                        <div class="price-change positive">+8.5%</div>
+                    </div>
+                </div>
+                <div class="price-card">
+                    <div class="crop-info">
+                        <h3>Soybean</h3>
+                        <div class="state">Madhya Pradesh</div>
+                    </div>
+                    <div class="price-info">
+                        <div class="current-price">₹4,100/quintal</div>
+                        <div class="price-change positive">+3.7%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nearby Markets Section -->
+        <section class="market-section">
+            <h2><i class="fas fa-map-marker-alt"></i> Nearby Markets</h2>
+            <div class="market-grid">
+                <div class="market-card">
+                    <h3>Bhopal</h3>
+                    <div class="market-details">
+                        <p><i class="fas fa-map-pin"></i> Azadpur, Delhi</p>
+                        <p><i class="fas fa-clock"></i> 5:00 AM - 2:00 PM</p>
+                        <p><i class="fas fa-route"></i> 25 km away</p>
+                    </div>
+                    <div class="market-crops">
+                        <span class="crop-tag">Wheat</span>
+                        <span class="crop-tag">Rice</span>
+                        <span class="crop-tag">Vegetables</span>
+                    </div>
+                </div>
+                <div class="market-card">
+                    <h3>Ghaziabad Mandi</h3>
+                    <div class="market-details">
+                        <p><i class="fas fa-map-pin"></i> Loni, Ghaziabad</p>
+                        <p><i class="fas fa-clock"></i> 6:00 AM - 3:00 PM</p>
+                        <p><i class="fas fa-route"></i> 18 km away</p>
+                    </div>
+                    <div class="market-crops">
+                        <span class="crop-tag">Sugarcane</span>
+                        <span class="crop-tag">Potato</span>
+                        <span class="crop-tag">Onion</span>
+                    </div>
+                </div>
+                <div class="market-card">
+                    <h3>Meerut Grain Market</h3>
+                    <div class="market-details">
+                        <p><i class="fas fa-map-pin"></i> Sadar Bazar, Meerut</p>
+                        <p><i class="fas fa-clock"></i> 5:30 AM - 1:30 PM</p>
+                        <p><i class="fas fa-route"></i> 32 km away</p>
+                    </div>
+                    <div class="market-crops">
+                        <span class="crop-tag">Bajra</span>
+                        <span class="crop-tag">Maize</span>
+                        <span class="crop-tag">Mustard</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="market-section">
+            <h2><i class="fas fa-lightbulb"></i> Setting Recommendations</h2>
+            <div class="recommendations">
+                <div class="recommendation-card">
+                    <div class="rec-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Best Selling Time</h3>
+                    <p>Based on current market trends, the optimal time to sell wheat is in the next 2-3 weeks when prices are expected to peak.</p>
+                </div>
+                <div class="recommendation-card">
+                    <div class="rec-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crop Diversification</h3>
+                    <p>Consider planting pulses (dal) crops as they show strong demand and better profit margins this season.</p>
+                </div>
+                <div class="recommendation-card">
+                    <div class="rec-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Transportation Tips</h3>
+                    <p>Use our logistics partners for cost-effective transportation to maximize your profit margins by reducing transport costs.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

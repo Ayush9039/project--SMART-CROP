@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Test -SmartCrop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .test-info {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1.5rem;
+            margin: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .test-info h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .test-info p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        .screen-info {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin: 1rem;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .screen-info h3 {
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem;
+        }
+        
+        .info-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card h4 {
+            color: #10b981;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card .value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        .test-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .test-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .test-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        
+        .test-btn.secondary {
+            background: #6b7280;
+        }
+        
+        .test-btn.secondary:hover {
+            background: #4b5563;
+        }
+        
+        .demo-content {
+            padding: 2rem;
+            background: #f9fafb;
+            margin: 1rem;
+            border-radius: 1rem;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .demo-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .demo-card h4 {
+            color: #10b981;
+            margin-bottom: 0.75rem;
+        }
+        
+        .demo-card p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .status-indicator.active {
+            background: #10b981;
+        }
+        
+        .status-indicator.inactive {
+            background: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i> SmartCrop</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="fertilizers.html" class="nav-item">
+                <i class="fas fa-flask"></i> Fertilizers
+            </a>
+            <a href="learning.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="ai-assistant.html" class="nav-item">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="faqs.html" class="nav-item">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="test-info">
+            <h2><i class="fas fa-mobile-alt"></i> Responsive Design Test</h2>
+            <p>This page tests the responsive design across different screen sizes</p>
+            <p>Menu button should work on both mobile and desktop</p>
+        </div>
+        
+        <div class="screen-info">
+            <h3><i class="fas fa-desktop"></i> Screen Information</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Screen Width</h4>
+                    <div class="value" id="screenWidth">-</div>
+                </div>
+                <div class="info-card">
+                    <h4>Device Type</h4>
+                    <div class="value" id="deviceType">-</div>
+                </div>
+                <div class="info-card">
+                    <h4>Menu Button</h4>
+                    <div class="value" id="menuStatus">-</div>
+                </div>
+                <div class="info-card">
+                    <h4>Sidebar State</h4>
+                    <div class="value" id="sidebarState">-</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-buttons">
+            <button class="test-btn" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i> Toggle Menu
+            </button>
+            <button class="test-btn" onclick="checkAllStatus()">
+                <i class="fas fa-info-circle"></i> Check Status
+            </button>
+            <button class="test-btn secondary" onclick="window.location.reload()">
+                <i class="fas fa-refresh"></i> Refresh Page
+            </button>
+        </div>
+        
+        <div class="demo-content">
+            <h3><i class="fas fa-th-large"></i> Responsive Grid Demo</h3>
+            <p>This grid should adapt to different screen sizes</p>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h4><i class="fas fa-mobile-alt"></i> Mobile</h4>
+                    <p>Single column layout on mobile devices</p>
+                </div>
+                <div class="demo-card">
+                    <h4><i class="fas fa-tablet-alt"></i> Tablet</h4>
+                    <p>Two column layout on tablet devices</p>
+                </div>
+                <div class="demo-card">
+                    <h4><i class="fas fa-desktop"></i> Desktop</h4>
+                    <p>Multi column layout on desktop</p>
+                </div>
+                <div class="demo-card">
+                    <h4><i class="fas fa-expand-arrows-alt"></i> Responsive</h4>
+                    <p>Automatically adjusts to screen size</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="padding: 2rem; text-align: center; background: #f3f4f6; margin: 1rem; border-radius: 1rem;">
+            <h3>Test Instructions</h3>
+            <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <ol>
+                    <li><strong>Desktop Test:</strong> Menu button should be visible and clickable</li>
+                    <li><strong>Mobile Test:</strong> Resize browser to mobile size (≤768px)</li>
+                    <li><strong>Menu Test:</strong> Click menu button to open/close sidebar</li>
+                    <li><strong>Click Outside:</strong> Click outside sidebar to close it</li>
+                    <li><strong>Language Toggle:</strong> Test language switching in sidebar</li>
+                    <li><strong>Responsive:</strong> Check how content adapts to different sizes</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Additional responsive test functions
+        function checkAllStatus() {
+            const screenWidth = window.innerWidth;
+            const isMobileDevice = screenWidth <= 768;
+            const menuBtn = document.querySelector('.global-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            
+            // Update screen width
+            document.getElementById('screenWidth').textContent = screenWidth + 'px';
+            
+            // Update device type
+            document.getElementById('deviceType').textContent = isMobileDevice ? 'Mobile' : 'Desktop';
+            
+            // Update menu status
+            if (menuBtn) {
+                const isVisible = menuBtn.style.display !== 'none';
+                const isClickable = !menuBtn.disabled;
+                document.getElementById('menuStatus').innerHTML = 
+                    `<span class="status-indicator ${isVisible ? 'active' : 'inactive'}"></span>${isVisible ? 'Visible' : 'Hidden'} & ${isClickable ? 'Clickable' : 'Disabled'}`;
+            } else {
+                document.getElementById('menuStatus').innerHTML = 
+                    '<span class="status-indicator inactive"></span>Not Found';
+            }
+            
+            // Update sidebar state
+            const isCollapsed = sidebar.classList.contains('collapsed');
+            document.getElementById('sidebarState').innerHTML = 
+                `<span class="status-indicator ${isCollapsed ? 'inactive' : 'active'}"></span>${isCollapsed ? 'Closed' : 'Open'}`;
+        }
+        
+        // Update status on resize
+        window.addEventListener('resize', function() {
+            setTimeout(checkAllStatus, 100);
+        });
+        
+        // Initial check
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(checkAllStatus, 500);
+        });
+        
+        // Update status every 2 seconds
+        setInterval(checkAllStatus, 2000);
+    </script>
+</body>
+</html>

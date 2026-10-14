@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Test - SmartCrop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Mobile test specific styles */
+        .mobile-test-info {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem;
+            text-align: center;
+        }
+        
+        .mobile-test-info h3 {
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mobile-test-info p {
+            color: #0c4a6e;
+            font-size: 0.9rem;
+        }
+        
+        .test-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .test-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .screen-info {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i> SMARTCROP</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="fertilizers.html" class="nav-item">
+                <i class="fas fa-flask"></i> Fertilizers
+            </a>
+            <a href="learning.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="ai-assistant.html" class="nav-item">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="faqs.html" class="nav-item">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="mobile-test-info">
+            <h3><i class="fas fa-mobile-alt"></i> Mobile Menu Test</h3>
+            <p>This page tests the mobile menu functionality. Resize your browser window to mobile size (≤768px) to see the hamburger menu button.</p>
+        </div>
+        
+        <div class="screen-info" id="screenInfo">
+            Screen Width: <span id="screenWidth"></span>px | 
+            Menu Button: <span id="menuStatus">Checking...</span>
+        </div>
+        
+        <div class="test-buttons">
+            <button class="test-btn" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i> Toggle Menu
+            </button>
+            <button class="test-btn" onclick="checkMenuStatus()">
+                <i class="fas fa-info"></i> Check Status
+            </button>
+            <button class="test-btn" onclick="window.location.reload()">
+                <i class="fas fa-refresh"></i> Refresh
+            </button>
+        </div>
+        
+        <div style="padding: 2rem; text-align: center;">
+            <h2>Mobile Menu Test Page</h2>
+            <p>This page helps test the mobile menu functionality across different screen sizes.</p>
+            
+            <div style="margin-top: 2rem; padding: 1rem; background: #f3f4f6; border-radius: 0.5rem;">
+                <h3>Test Instructions:</h3>
+                <ol style="text-align: left; max-width: 500px; margin: 0 auto;">
+                    <li>Resize your browser window to mobile size (≤768px width)</li>
+                    <li>Look for the green hamburger menu button in the top-left corner</li>
+                    <li>Click the menu button to open/close the sidebar</li>
+                    <li>Test clicking outside the sidebar to close it</li>
+                    <li>Test the language toggle button in the sidebar</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Additional mobile test functions
+        function checkMenuStatus() {
+            const menuBtn = document.querySelector('.global-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const isMobileDevice = window.innerWidth <= 768;
+            
+            document.getElementById('screenWidth').textContent = window.innerWidth;
+            
+            if (menuBtn) {
+                const isVisible = menuBtn.style.display !== 'none';
+                const isCollapsed = sidebar.classList.contains('collapsed');
+                document.getElementById('menuStatus').textContent = 
+                    `Visible: ${isVisible}, Collapsed: ${isCollapsed}, Mobile: ${isMobileDevice}`;
+            } else {
+                document.getElementById('menuStatus').textContent = 'Menu button not found';
+            }
+        }
+        
+        // Update screen info on resize
+        window.addEventListener('resize', function() {
+            setTimeout(checkMenuStatus, 100);
+        });
+        
+        // Initial check
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(checkMenuStatus, 500);
+        });
+    </script>
+</body>
+</html>
