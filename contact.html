@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SmartCrop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i> SmartCrop</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="learning.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="ai-assistant.html" class="nav-item">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="faqs.html" class="nav-item">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item active">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button onclick="toggleLanguage()" id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+            <p>Get in touch with our team for support, partnerships, or inquiries</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <section class="contact-form-section">
+                <div class="form-header">
+                    <h2>Send us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="farmLocation">Farm Location (State/District)</label>
+                        <input type="text" id="farmLocation" name="farmLocation" placeholder="e.g., Punjab, Ludhiana">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="farmSize">Farm Size (in acres/hectares)</label>
+                        <input type="text" id="farmSize" name="farmSize" placeholder="e.g., 10 acres">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="sensors">Sensor Information</option>
+                            <option value="pricing">Pricing & Subscriptions</option>
+                            <option value="partnership">Partnership Opportunities</option>
+                            <option value="training">Training & Workshops</option>
+                            <option value="feedback">Feedback & Suggestions</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Please describe your inquiry or how we can help you..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Subscribe to our newsletter for farming tips and updates</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </section>
+
+            <!-- Contact Information -->
+            <section class="contact-info-section">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>We're here to help you revolutionize your farming with smart technology</p>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email Address</h4>
+                            <p>info@smartcrop.com</p>
+                            <p>support@smartcrop.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone Numbers</h4>
+                            <p>+91-7489-459-880 (Support)</p>
+                            <p>+91-8800-789-012 (Sales)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                            <p>Sunday: 10:00 AM - 4:00 PM (Support only)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Office Address</h4>
+                            <p>SmartCrop Technologies Pvt. Ltd.<br>
+                            Sector 20, Satna<br>
+                            Madhya Pradesh - 201309, India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media Links -->
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Additional Support Options -->
+        <section class="support-options">
+            <h2>Other Ways to Get Help</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>FAQ Section</h3>
+                    <p>Find quick answers to common questions about our platform and services</p>
+                    <a href="faqs.html" class="btn btn-outline">Browse FAQs</a>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Assistant</h3>
+                    <p>Get instant help with farming questions from our intelligent AI assistant</p>
+                    <a href="ai-assistant.html" class="btn btn-outline">Chat with AI</a>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learning Hub</h3>
+                    <p>Access tutorials, guides, and resources to make the most of our platform</p>
+                    <a href="learning.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message (in a real app, this would send data to server)
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            submitBtn.style.backgroundColor = '#10B981';
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.backgroundColor = '';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
