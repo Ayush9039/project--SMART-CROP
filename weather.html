@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather - SmartCrop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i>  SmartCrop</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="learning.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item active">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="ai-assistant.html" class="nav-item">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="faqs.html" class="nav-item">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button onclick="toggleLanguage()" id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+            <p>Real-time weather data and agricultural forecasts for smart farming decisions</p>
+            
+            <!-- Enhanced Location Search Bar -->
+            <div class="weather-search-container">
+                <div class="search-wrapper">
+                    <div class="search-input-group">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="locationSearch" placeholder="Search for any location..." class="location-search-input">
+                        <button id="clearBtn" class="clear-btn" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-location-arrow"></i>
+                        <span>Search</span>
+                    </button>
+                    <button id="currentLocationBtn" class="current-location-btn" title="Use current location">
+                        <i class="fas fa-crosshairs"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+                <div class="recent-searches" id="recentSearches">
+                    <div class="recent-header">
+                        <i class="fas fa-clock"></i>
+                        <span>Recent Searches</span>
+                    </div>
+                    <div class="recent-items" id="recentItems"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Weather Section -->
+        <section class="weather-section">
+            <h2><i class="fas fa-thermometer-half"></i> Current Conditions</h2>
+            <div class="current-weather">
+                <div class="weather-main">
+                    <div class="weather-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="weather-info">
+                        <div class="temperature">28°C</div>
+                        <div class="condition">Sunny</div>
+                        <div class="location">Satna, India</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <div class="detail-label">Humidity</div>
+                                <div class="detail-value humidity-value">--%</div>
+                            </div>
+                        </div>
+                        <div class="weather-detail">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <div class="detail-label">Wind</div>
+                                <div class="detail-value wind-value">-- km/h</div>
+                            </div>
+                        </div>
+                        <div class="weather-detail">
+                            <i class="fas fa-cloud-rain"></i>
+                            <div>
+                                <div class="detail-label">Rainfall</div>
+                                <div class="detail-value rain-value">-- mm</div>
+                            </div>
+                        </div>
+                        <div class="weather-detail">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div>
+                                <div class="detail-label">Pressure</div>
+                                <div class="detail-value pressure-value">-- hPa</div>
+                            </div>
+                        </div>
+                        <div class="weather-detail">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <div class="detail-label">Visibility</div>
+                                <div class="detail-value visibility-value">-- km</div>
+                            </div>
+                        </div>
+                        <div class="weather-detail">
+                            <i class="fas fa-sun"></i>
+                            <div>
+                                <div class="detail-label">UV Index</div>
+                                <div class="detail-value uv-value">--</div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Forecast Section -->
+        <section class="weather-section">
+            <h2><i class="fas fa-calendar-week"></i> 7-Day Forecast</h2>
+            <div class="forecast-grid">
+                <div class="forecast-day">
+                    <div class="day-name">Today</div>
+                    <div class="day-icon"><i class="fas fa-sun"></i></div>
+                    <div class="day-temps">
+                        <span class="high">32°</span>
+                        <span class="low">18°</span>
+                    </div>
+                    <div class="day-condition">Sunny</div>
+                    <div class="rain-chance">0% Rain</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Tomorrow</div>
+                    <div class="day-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <div class="day-temps">
+                        <span class="high">29°</span>
+                        <span class="low">16°</span>
+                    </div>
+                    <div class="day-condition">Partly Cloudy</div>
+                    <div class="rain-chance">10% Rain</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Wednesday</div>
+                    <div class="day-icon"><i class="fas fa-cloud-rain"></i></div>
+                    <div class="day-temps">
+                        <span class="high">26°</span>
+                        <span class="low">14°</span>
+                    </div>
+                    <div class="day-condition">Light Rain</div>
+                    <div class="rain-chance">70% Rain</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Thursday</div>
+                    <div class="day-icon"><i class="fas fa-cloud-rain"></i></div>
+                    <div class="day-temps">
+                        <span class="high">24°</span>
+                        <span class="low">12°</span>
+                    </div>
+                    <div class="day-condition">Moderate Rain</div>
+                    <div class="rain-chance">85% Rain</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Friday</div>
+                    <div class="day-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="day-temps">
+                        <span class="high">27°</span>
+                        <span class="low">15°</span>
+                    </div>
+                    <div class="day-condition">Cloudy</div>
+                    <div class="rain-chance">20% Rain</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Saturday</div>
+                    <div class="day-icon"><i class="fas fa-sun"></i></div>
+                    <div class="day-temps">
+                        <span class="high">30°</span>
+                        <span class="low">17°</span>
+                    </div>
+                    <div class="day-condition">Sunny</div>
+                    <div class="rain-chance">5% Rain</div>
+                </div>
+                <div class="forecast-day">
+                    <div class="day-name">Sunday</div>
+                    <div class="day-icon"><i class="fas fa-sun"></i></div>
+                    <div class="day-temps">
+                        <span class="high">33°</span>
+                        <span class="low">19°</span>
+                    </div>
+                    <div class="day-condition">Hot & Sunny</div>
+                    <div class="rain-chance">0% Rain</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agricultural Recommendations Section -->
+        <section class="weather-section">
+            <h2><i class="fas fa-lightbulb"></i> Agricultural Recommendations</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card weather-rec">
+                    <div class="rec-header">
+                        <i class="fas fa-tint"></i>
+                        <h3>Irrigation Advisory</h3>
+                    </div>
+                    <div class="rec-content">
+                        <p>With moderate rainfall expected on Wednesday and Thursday (total: 15-20mm), reduce irrigation by 50% for the next 3 days.</p>
+                        <div class="rec-status optimal">Optimal Conditions</div>
+                    </div>
+                </div>
+                <div class="recommendation-card weather-rec">
+                    <div class="rec-header">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Crop Planting</h3>
+                    </div>
+                    <div class="rec-content">
+                        <p>Current weather conditions are excellent for planting winter crops like wheat, barley, and mustard. Soil temperature is optimal.</p>
+                        <div class="rec-status excellent">Excellent Timing</div>
+                    </div>
+                </div>
+                <div class="recommendation-card weather-rec">
+                    <div class="rec-header">
+                        <i class="fas fa-spray-can"></i>
+                        <h3>Pest Management</h3>
+                    </div>
+                    <div class="rec-content">
+                        <p>High humidity after rainfall may increase fungal disease risk. Consider preventive fungicide application on Friday.</p>
+                        <div class="rec-status caution">Caution Required</div>
+                    </div>
+                </div>
+                <div class="recommendation-card weather-rec">
+                    <div class="rec-header">
+                        <i class="fas fa-cut"></i>
+                        <h3>Harvesting</h3>
+                    </div>
+                    <div class="rec-content">
+                        <p>Delay harvesting activities until Friday. Current moisture levels are too high for proper grain storage.</p>
+                        <div class="rec-status delay">Wait Recommended</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suitable Crops Section -->
+        <section class="weather-section">
+            <h2><i class="fas fa-wheat-awn"></i> Suitable Crops for Current Season</h2>
+            <div class="crops-grid">
+                <div class="crop-card">
+                    <div class="crop-icon">
+                        <i class="fas fa-wheat-awn"></i>
+                    </div>
+                    <h3>Wheat</h3>
+                    <div class="crop-suitability excellent">Excellent Match</div>
+                    <div class="crop-details">
+                        <p>Temperature: 15-25°C (Current: 18-32°C)</p>
+                        <p>Rainfall: 75-100cm annually</p>
+                        <p>Best planting: November-December</p>
+                    </div>
+                </div>
+                <div class="crop-card">
+                    <div class="crop-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Mustard</h3>
+                    <div class="crop-suitability good">Good Match</div>
+                    <div class="crop-details">
+                        <p>Temperature: 10-25°C (Current: 18-32°C)</p>
+                        <p>Rainfall: 25-40cm annually</p>
+                        <p>Best planting: October-November</p>
+                    </div>
+                </div>
+                <div class="crop-card">
+                    <div class="crop-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Barley</h3>
+                    <div class="crop-suitability excellent">Excellent Match</div>
+                    <div class="crop-details">
+                        <p>Temperature: 12-22°C (Current: 18-32°C)</p>
+                        <p>Rainfall: 50-75cm annually</p>
+                        <p>Best planting: November-December</p>
+                    </div>
+                </div>
+                <div class="crop-card">
+                    <div class="crop-icon">
+                        <i class="fas fa-carrot"></i>
+                    </div>
+                    <h3>Potato</h3>
+                    <div class="crop-suitability moderate">Moderate Match</div>
+                    <div class="crop-details">
+                        <p>Temperature: 15-20°C (Current: 18-32°C)</p>
+                        <p>Rainfall: 50-70cm annually</p>
+                        <p>Best planting: October-November</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
