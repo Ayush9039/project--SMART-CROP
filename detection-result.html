@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detection Result - SmartCrop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo">
+      <h2><i class="fas fa-seedling"></i> SmartCrop</h2>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-item">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a href="market.html" class="nav-item">
+        <i class="fas fa-chart-line"></i> Market
+      </a>
+      <a href="image-detection.html" class="nav-item active">
+        <i class="fas fa-image"></i> Image Detection
+      </a>
+      <a href="learning.html" class="nav-item">
+        <i class="fas fa-graduation-cap"></i> Learning
+      </a>
+      <a href="sensors.html" class="nav-item">
+        <i class="fas fa-microchip"></i> Sensors
+      </a>
+      <a href="weather.html" class="nav-item">
+        <i class="fas fa-cloud-sun"></i> Weather
+      </a>
+      <a href="ai-assistant.html" class="nav-item">
+        <i class="fas fa-robot"></i> AI Assistant
+      </a>
+      <a href="faqs.html" class="nav-item">
+        <i class="fas fa-question-circle"></i> FAQs
+      </a>
+      <a href="contact.html" class="nav-item">
+        <i class="fas fa-envelope"></i> Contact Us
+      </a>
+      <a href="login.html" class="nav-item">
+        <i class="fas fa-sign-in-alt"></i> Sign In / Login
+      </a>
+    </nav>
+    <div class="language-toggle">
+      <button id="langBtn">
+        <i class="fas fa-globe"></i> English
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header class="page-header">
+      <h1><i class="fas fa-clipboard-check"></i> Detection Result</h1>
+      <p>Predicted disease, confidence score, symptoms, and recommended actions.</p>
+    </header>
+
+    <section class="approaches result-section">
+      <div class="card result-card">
+        <div class="result-container">
+          <div class="result-image-section">
+            <img id="resultImage" alt="Uploaded" class="result-image" />
+          </div>
+          <div class="result-details-section">
+            <div class="disease-header">
+              <i class="fas fa-disease"></i>
+              <h3 id="diseaseName">Disease</h3>
+            </div>
+            <p id="cropName" class="crop-info">Crop: -</p>
+            <p id="confidence" class="accuracy-info">Accuracy: -%</p>
+
+            <div class="symptoms-card">
+              <h4><i class="fas fa-exclamation-triangle"></i> Key Symptoms</h4>
+              <ul id="symptomsList"></ul>
+            </div>
+
+            <div class="solutions-card">
+              <h4><i class="fas fa-lightbulb"></i> Recommended Actions</h4>
+              <ul id="solutionsList"></ul>
+            </div>
+
+            <div class="action-buttons">
+              <a class="btn btn-secondary" href="image-detection.html">
+                <i class="fas fa-arrow-left"></i> Back
+              </a>
+              <a class="btn btn-primary" href="learning.html">
+                <i class="fas fa-book"></i> Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="emptyState" class="card" style="display:none; text-align:center;">
+        <i class="fas fa-info-circle" style="font-size:40px; color:#a7f3d0;"></i>
+        <p style="margin-top:0.5rem; color:#6b7280;">No result found. Please upload an image from Image Detection page.</p>
+        <a class="btn btn-primary" href="image-detection.html" style="margin-top:0.75rem;"><i class="fas fa-image"></i> Go to Image Detection</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3><i class="fas fa-seedling"></i> SmartCrop</h3>
+          <p>Empowering farmers with AI-driven insights for healthier crops and better yields.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="market.html">Market Prices</a></li>
+            <li><a href="learning.html">Learning Hub</a></li>
+            <li><a href="sensors.html">Sensor Solutions</a></li>
+            <li><a href="weather.html">Weather Forecast</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="mailto:info@smartcrop.com"><i class="fas fa-envelope"></i> info@smartcrop.com</a>
+            <a href="#"><i class="fab fa-instagram"></i> @smartcrop_official</a>
+            <a href="#"><i class="fab fa-facebook"></i> SmartCrop</a>
+            <a href="#"><i class="fab fa-twitter"></i> @SmartCropTech</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SmartCrop. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="result.js"></script>
+</body>
+</html>

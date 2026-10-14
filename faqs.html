@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - SMARTCROP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i> SMARTCROP</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="fertilizers.html" class="nav-item">
+                <i class="fas fa-flask"></i> Fertilizers
+            </a>
+            <a href="learning.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="faqs.html" class="nav-item active">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button onclick="toggleLanguage()" id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-question-circle"></i> Frequently Asked Questions</h1>
+            <p>Find answers to common questions about SMARTCROP platform and services</p>
+        </div>
+
+        <!-- Search FAQ -->
+        <div class="faq-search">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="faqSearch" placeholder="Search for questions or keywords..." onkeyup="searchFAQs()">
+            </div>
+        </div>
+
+        <!-- FAQ Categories -->
+        <section class="faq-categories">
+            <div class="category-buttons">
+                <button class="category-btn active" onclick="filterFAQs('all')">All Questions</button>
+                <button class="category-btn" onclick="filterFAQs('platform')">Platform</button>
+                <button class="category-btn" onclick="filterFAQs('sensors')">Sensors</button>
+                <button class="category-btn" onclick="filterFAQs('ai')">AI Assistant</button>
+                <button class="category-btn" onclick="filterFAQs('pricing')">Pricing</button>
+                <button class="category-btn" onclick="filterFAQs('technical')">Technical</button>
+            </div>
+        </section>
+
+        <!-- FAQ Items -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <!-- Platform FAQs -->
+                <div class="faq-item" data-category="platform">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What is SMARTCROP and how does it help farmers?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SMARTCROP is a comprehensive agricultural technology platform that helps farmers optimize their operations using IoT sensors, AI analytics, and data-driven insights. Our platform provides real-time monitoring of crops, soil conditions, weather forecasting, market information, and intelligent recommendations to increase yields while reducing costs and resource consumption.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="platform">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I get started with SMARTCROP?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Getting started is simple: 1) Create your free account on our platform, 2) Complete your farm profile with basic information about your crops and land, 3) Explore our learning resources and market data, 4) Optionally connect IoT sensors for advanced monitoring, 5) Start using our AI assistant for personalized farming advice.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="platform">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is SMARTCROP suitable for small-scale farmers?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! SMARTCROP is designed to benefit farmers of all scales. Small-scale farmers can access our free features including weather forecasts, market prices, learning resources, and basic AI assistance. Our sensor packages are scalable and can be customized based on farm size and budget.</p>
+                    </div>
+                </div>
+
+                <!-- Sensors FAQs -->
+                <div class="faq-item" data-category="sensors">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What types of sensors does SMARTCROP offer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a comprehensive range of agricultural sensors including: soil moisture and temperature sensors, nutrient level monitors (NPK, pH), weather monitoring stations, plant health sensors using spectral analysis, smart irrigation controllers, and AI-powered pest detection traps. All sensors integrate seamlessly with our platform for unified monitoring.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="sensors">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How do I install and maintain the sensors?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our sensors are designed for easy installation with detailed guides and video tutorials. Most sensors can be installed by farmers themselves within 30 minutes. We provide 24/7 technical support and our sensors are weatherproof with 2+ year battery life. Remote diagnostics help identify any issues before they affect performance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="sensors">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How accurate are the sensor readings?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our sensors maintain laboratory-grade accuracy: soil moisture sensors have ±3% accuracy, temperature sensors ±0.5°C, and nutrient sensors provide precision comparable to laboratory testing. All sensors are calibrated before shipping and include automatic calibration features to maintain accuracy over time.</p>
+                    </div>
+                </div>
+
+                <!-- AI Assistant FAQs -->
+                <div class="faq-item" data-category="ai">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How does the AI Assistant work?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our AI Assistant uses advanced machine learning algorithms trained on vast agricultural datasets. It analyzes your farm's specific conditions, sensor data, weather patterns, and crop characteristics to provide personalized recommendations. The AI can identify plant diseases from photos with 95% accuracy, predict yields, and suggest optimal farming practices.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="ai">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can the AI diagnose plant diseases from photos?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Simply upload clear photos of affected plants, and our AI will analyze them using computer vision technology. It can identify over 200 common plant diseases with 95% accuracy and provide specific treatment recommendations, including organic and chemical solutions based on your preferences.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="ai">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is the AI available in local languages?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, our AI Assistant supports English and Hindi, with plans to add more regional languages. The AI understands farming terminology in both languages and can provide responses in the language of your choice. We're continuously working to expand language support based on user needs.</p>
+                    </div>
+                </div>
+
+                <!-- Pricing FAQs -->
+                <div class="faq-item" data-category="pricing">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What does SMARTCROP cost?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SMARTCROP offers flexible pricing: our Basic plan is FREE and includes weather forecasts, market prices, learning resources, and limited AI assistance. Premium plans start at ₹999/month with unlimited AI support, advanced analytics, and sensor integration. Sensor packages are available separately starting from ₹15,000 for a basic monitoring kit.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pricing">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Are there any government subsidies available?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Many state governments offer subsidies for agricultural technology adoption. We assist farmers in applying for relevant schemes under PM-KISAN, Digital Agriculture Mission, and various state-specific programs. Our team can help you understand eligibility and complete subsidy applications.</p>
+                    </div>
+                </div>
+
+                <!-- Technical FAQs -->
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What internet connectivity is required?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SMARTCROP works with basic internet connectivity. Our mobile app functions on 2G/3G/4G networks and WiFi. Sensors use low-power communication protocols and can store data locally if connectivity is temporarily unavailable. The platform automatically syncs data when connection is restored.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is my farm data secure and private?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Data security is our top priority. All data is encrypted during transmission and storage. We comply with Indian data protection regulations and never share individual farm data with third parties without explicit consent. Farmers maintain full ownership and control of their data and can export or delete it anytime.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="technical">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What support is available if I need help?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide comprehensive support including: 24/7 technical helpline, video tutorials and documentation, WhatsApp support in local languages, on-field assistance for sensor installation, regular webinars and training sessions, and a community forum where farmers can share experiences and solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Still have questions section -->
+        <section class="help-section">
+            <div class="help-card">
+                <h3>Still have questions?</h3>
+                <p>Can't find what you're looking for? Our support team is here to help!</p>
+                <div class="help-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Support</a>
+                    <a href="ai-assistant.html" class="btn btn-outline">Ask AI Assistant</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="faqs.js"></script>
+</body>
+</html>
