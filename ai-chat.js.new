@@ -1,0 +1,164 @@
+// AI Chat Functionality
+
+class SmartCropAI {
+    constructor() {
+        this.conversationHistory = [];
+        this.isLoading = false;
+        this.apiUrl = 'http://localhost:5000/chat';
+    }
+
+    async getAIResponse(userInput) {
+        // Show typing indicator
+        this.isLoading = true;
+        showTypingIndicator();
+
+        // Add user message to chat
+        this.conversationHistory.push({ role: 'user', content: userInput });
+        addMessageToChat(userInput, 'user');
+
+        try {
+            // Make API call to backend
+            const response = await fetch(this.apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: userInput,
+                    conversation: this.conversationHistory.slice(-5) // Send last 5 messages for context
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            
+            // Add AI response to chat
+            const aiResponse = data.response || 'I apologize, but I cannot process that request at the moment.';
+            this.conversationHistory.push({ role: 'assistant', content: aiResponse });
+            addMessageToChat(aiResponse, 'assistant');
+            
+        } catch (error) {
+            console.error('Error getting AI response:', error);
+            addMessageToChat('Sorry, I encountered an error. Please try again later.', 'assistant');
+        } finally {
+            this.isLoading = false;
+            hideTypingIndicator();
+        }
+    }
+}
+
+// Initialize AI Assistant
+const smartCropAI = new SmartCropAI();
+
+// Send message function
+async function sendMessage() {
+    const messageInput = document.getElementById('messageInput');
+    const message = messageInput.value.trim();
+    
+    if (message && !smartCropAI.isLoading) {
+        await smartCropAI.getAIResponse(message);
+        messageInput.value = '';
+        
+        // Auto-scroll to bottom of chat
+        const chatMessages = document.querySelector('.chat-messages');
+        if (chatMessages) {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+}
+
+// Handle quick question buttons
+function sendQuickQuestion(question) {
+    if (smartCropAI.isLoading) return;
+    
+    const messageInput = document.getElementById('messageInput');
+    messageInput.value = question;
+    sendMessage();
+}
+
+// Add message to chat UI
+function addMessageToChat(message, sender) {
+    const chatMessages = document.querySelector('.chat-messages');
+    if (!chatMessages) return;
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}`;
+    
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+    messageContent.textContent = message;
+    
+    messageDiv.appendChild(messageContent);
+    chatMessages.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Show typing indicator
+function showTypingIndicator() {
+    const chatMessages = document.querySelector('.chat-messages');
+    if (!chatMessages) return;
+    
+    // Remove any existing typing indicators
+    const existingTyping = document.querySelector('.typing-indicator');
+    if (existingTyping) {
+        existingTyping.remove();
+    }
+    
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'typing-indicator';
+    typingDiv.innerHTML = `
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+    `;
+    
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Hide typing indicator
+function hideTypingIndicator() {
+    const typingIndicator = document.querySelector('.typing-indicator');
+    if (typingIndicator) {
+        typingIndicator.remove();
+    }
+}
+
+// Handle Enter key press
+function handleEnter(event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+    }
+}
+
+// Initialize chat when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listeners
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    
+    if (messageInput) {
+        messageInput.addEventListener('keypress', handleEnter);
+    }
+    
+    if (sendButton) {
+        sendButton.addEventListener('click', sendMessage);
+    }
+    
+    // Add click handlers for quick questions
+    const quickQuestions = document.querySelectorAll('.quick-question');
+    quickQuestions.forEach(button => {
+        button.addEventListener('click', function() {
+            const question = this.getAttribute('data-question');
+            if (question) {
+                sendQuickQuestion(question);
+            }
+        });
+    });
+});
