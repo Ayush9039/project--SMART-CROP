@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - SmartCrop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2><i class="fas fa-seedling"></i> SmartCrop</h2>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="market.html" class="nav-item">
+                <i class="fas fa-chart-line"></i> Market
+            </a>
+            <a href="learning.html" class="nav-item">
+                <i class="fas fa-graduation-cap"></i> Learning
+            </a>
+            <a href="sensors.html" class="nav-item">
+                <i class="fas fa-microchip"></i> Sensors
+            </a>
+            <a href="weather.html" class="nav-item">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </a>
+            <a href="ai-assistant.html" class="nav-item active">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="faqs.html" class="nav-item">
+                <i class="fas fa-question-circle"></i> FAQs
+            </a>
+            <a href="contact.html" class="nav-item">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+            <a href="login.html" class="nav-item">
+                <i class="fas fa-sign-in-alt"></i> Sign In / Login
+            </a>
+        </nav>
+        <div class="language-toggle">
+            <button onclick="toggleLanguage()" id="langBtn">
+                <i class="fas fa-globe"></i> English
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1><i class="fas fa-robot"></i> AI Assistant</h1>
+            <p>Your intelligent farming companion powered by advanced AI</p>
+        </div>
+
+        <!-- Chat Interface -->
+        <section class="chat-section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="ai-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="ai-info">
+                        <h3>SmartCrop AI Assistant</h3>
+                        <span class="status online">Online</span>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm your AI farming assistant. I can help you with:</p>
+                            <ul>
+                                <li>Crop disease identification and treatment</li>
+                                <li>Pest management solutions</li>
+                                <li>Fertilizer recommendations</li>
+                                <li>Irrigation scheduling</li>
+                                <li>Weather-based farming advice</li>
+                            </ul>
+                            <p>What would you like to know about your farming operations?</p>
+                        </div>
+                        <div class="message-time">2:30 PM</div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="quick-questions">
+                        <button class="quick-btn" onclick="sendQuickQuestion('What fertilizer should I use for wheat?')">
+                            <i class="fas fa-seedling"></i> Fertilizer for Wheat
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickQuestion('How to identify pest damage?')">
+                            <i class="fas fa-bug"></i> Pest Identification
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickQuestion('When should I harvest my crops?')">
+                            <i class="fas fa-cut"></i> Harvest Timing
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickQuestion('Irrigation schedule for current weather?')">
+                            <i class="fas fa-tint"></i> Irrigation Schedule
+                        </button>
+                    </div>
+                    <div class="input-area">
+                        <input type="text" id="messageInput" placeholder="Ask me anything about farming..." onkeypress="handleEnter(event)">
+                        <button class="send-btn" onclick="sendMessage()" title="Send Message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Capabilities Section -->
+        <section class="capabilities-section">
+            <h2><i class="fas fa-magic"></i> AI Capabilities</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Disease Diagnosis</h3>
+                    <p>Upload images of your crops and get instant disease identification with treatment recommendations using computer vision.</p>
+                    <div class="capability-features">
+                        <span>95% Accuracy</span>
+                        <span>200+ Diseases</span>
+                        <span>Instant Results</span>
+                    </div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Yield Prediction</h3>
+                    <p>Advanced algorithms analyze weather, soil, and crop data to predict harvest yields and optimize farming strategies.</p>
+                    <div class="capability-features">
+                        <span>90% Precision</span>
+                        <span>Multi-factor Analysis</span>
+                        <span>Risk Assessment</span>
+                    </div>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Crop Optimization</h3>
+                    <p>Personalized recommendations for crop selection, planting schedules, and resource allocation based on your specific conditions.</p>
+                    <div class="capability-features">
+                        <span>Customized Plans</span>
+                        <span>Resource Efficiency</span>
+                        <span>Profit Maximization</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Interactions Section -->
+        <section class="recent-section">
+            <h2><i class="fas fa-history"></i> Recent Interactions</h2>
+            <div class="recent-interactions">
+                <div class="interaction-item">
+                    <div class="interaction-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="interaction-content">
+                        <h4>Tomato Leaf Disease Analysis</h4>
+                        <p>Identified: Early Blight - Recommended copper-based fungicide treatment</p>
+                        <span class="interaction-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="interaction-item">
+                    <div class="interaction-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="interaction-content">
+                        <h4>Irrigation Schedule Optimization</h4>
+                        <p>Adjusted watering plan based on upcoming rainfall predictions</p>
+                        <span class="interaction-time">1 day ago</span>
+                    </div>
+                </div>
+                <div class="interaction-item">
+                    <div class="interaction-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="interaction-content">
+                        <h4>Pest Management Strategy</h4>
+                        <p>Created integrated pest management plan for aphid control</p>
+                        <span class="interaction-time">3 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="ai-chat.js"></script>
+</body>
+</html>
